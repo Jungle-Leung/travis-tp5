@@ -13,9 +13,14 @@ class Index
         return 'asdasdasdasd';
     }
     
-    public function branch()
+    public function userModule()
     {
         return 'create user module branch';
+    }
+    
+    public function orderModule()
+    {
+        return 'create order module branch';
     }
     
 }
