@@ -17,4 +17,10 @@ class ExampleTest extends TestCase
     {
         $this->visit('/')->see('ThinkPHP');
     }
+    
+    public function test()
+    {
+        $this->visit('/index/index/test')->see('Hello world!');
+    }
+    
 }

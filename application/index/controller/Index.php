@@ -12,4 +12,10 @@ class Index
     {
         return 'asdasdasdasd';
     }
+    
+    public function branch()
+    {
+        return 'create branch';
+    }
+    
 }
