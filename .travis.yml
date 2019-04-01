@@ -14,7 +14,6 @@ before_install:
   - composer self-update
 
 install:
-  - ls -al
   - composer install --no-dev --no-interaction --ignore-platform-reqs
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Core.zip .
   - composer require --update-no-dev --no-interaction "topthink/think-image:^1.0"
@@ -27,6 +26,7 @@ install:
   - composer require --update-no-dev --no-interaction "topthink/think-angular:^1.0"
   - composer require --dev --update-no-dev --no-interaction "topthink/think-testing:^1.0"
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Full.zip .
+  - ls -al
 
 script:
   - php think unit
