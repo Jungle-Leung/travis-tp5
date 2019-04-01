@@ -20,7 +20,7 @@ class Index
     
     public function update()
     {
-        return 'update';
+        return 'update'; 
     }
     
     public function delete()
