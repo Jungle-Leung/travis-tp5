@@ -12,15 +12,20 @@ namespace tests;
 
 class ExampleTest extends TestCase
 {
-
+    
     public function testBasicExample()
     {
         $this->visit('/')->see('ThinkPHP');
     }
     
-    public function test()
+    public function readTest()
     {
-        $this->visit('/index/index/test')->see('Hello world!');
+        $this->visit('/index/index/read')->see('read');
+    }
+    
+    public function createTest()
+    {
+        $this->visit('/index/index/create')->see('create');
     }
     
 }
