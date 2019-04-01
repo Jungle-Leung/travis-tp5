@@ -1,5 +1,6 @@
 .idea
 .settings
+.project
 composer.lock
 *.log
 thinkphp
