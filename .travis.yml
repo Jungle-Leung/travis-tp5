@@ -26,7 +26,7 @@ install:
   - composer require --update-no-dev --no-interaction "topthink/think-angular:^1.0"
   - composer require --update-no-dev --no-interaction "topthink/think-testing:^1.0"
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Full.zip .
-  - cd vendor/topthink && ls -al
+  - ls -al && cd vendor/topthink && ls -al
 
 script:
   - php think
