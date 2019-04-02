@@ -29,7 +29,7 @@ install:
   - cd vendor/topthink && ls -al
 
 script:
-  - php think unit
+  - php ./think unit
 
 deploy:
   provider: releases
