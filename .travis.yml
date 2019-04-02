@@ -28,7 +28,7 @@ install:
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Full.zip .
 
 script:
-  - ls -al
+  - php think unit
 
 deploy:
   provider: releases
