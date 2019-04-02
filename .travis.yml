@@ -28,8 +28,8 @@ install:
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Full.zip .
   - cd vendor/topthink && ls -al
 
-script:
-  - php ./think unit
+#script:
+#  - php think unit
 
 deploy:
   provider: releases
