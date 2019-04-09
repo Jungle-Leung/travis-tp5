@@ -21,6 +21,7 @@ install:
   - composer install --no-dev --no-interaction --ignore-platform-reqs
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Full.zip .
   - chmod -R 777 ./
+  - ls -al
 
 script:
   - ./think unit
