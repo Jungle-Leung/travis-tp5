@@ -47,6 +47,8 @@ RUN mkdir -p /tmp/redis \
     && docker-php-ext-install /tmp/redis \
     && rm -r /tmp/redis
 
+RUN php-fpm
+
 CMD curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/local/bin/composer \
 	&& composer -v \
