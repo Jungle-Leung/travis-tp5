@@ -44,3 +44,8 @@ RUN mkdir -p /tmp/redis \
     && docker-php-ext-configure /tmp/redis --enable-redis \
     && docker-php-ext-install /tmp/redis \
     && rm -r /tmp/redis
+    
+WORKDIR /var/www/html
+
+RUN ls -al
+    
