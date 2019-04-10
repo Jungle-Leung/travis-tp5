@@ -10,7 +10,7 @@ class Index
     
     public function read()
     {
-        return 'read';
+        return 'read hook';
     }
     
     public function create()
