@@ -10,7 +10,7 @@ class Index
     
     public function read()
     {
-        return 'read v1.0';
+        return 'read v1.0 ';
     }
     
     public function create()
