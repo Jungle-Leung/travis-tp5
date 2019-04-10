@@ -13,6 +13,7 @@ services:
       - ${LOG_PATH}:/var/log/nginx:rw
       - ${NGINX_VHOST_PATH}:/etc/nginx/conf.d/:ro
       - ${NGINX_CONFIG_FILENAME}:/etc/nginx/nginx.conf:ro
+    restart: always
       
   php:
     build: ./docker/php
