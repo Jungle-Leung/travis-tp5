@@ -18,7 +18,7 @@ services:
     build: ./docker/php
     container_name: php
     expose:
-      - "9000"
+      - 9000
     volumes:
       - ${APPLICATION}:/var/www/html:rw
       - ${LOG_PATH}:/var/log:rw
