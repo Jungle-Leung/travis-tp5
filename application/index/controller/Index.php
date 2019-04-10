@@ -15,7 +15,7 @@ class Index
     
     public function create()
     {
-        return 'create';
+        return 'create v1.0';
     }
     
     public function update()
