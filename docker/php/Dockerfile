@@ -50,7 +50,7 @@ RUN mkdir -p /tmp/redis \
 CMD curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/local/bin/composer \
 	&& composer -v \
-	#&& composer config -g repo.packagist composer https://packagist.phpcomposer.com \
+	&& composer config -g repo.packagist composer https://packagist.phpcomposer.com \
 	&& composer install \
 	&& tail -f /dev/null
     
