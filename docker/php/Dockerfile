@@ -47,5 +47,5 @@ RUN mkdir -p /tmp/redis \
     
 WORKDIR /var/www/html
 
-RUN ls -al
+RUN ls -al && php -m
     
