@@ -47,9 +47,10 @@ RUN mkdir -p /tmp/redis \
     
 WORKDIR /var/www/html
 
-CMD pwd && ls -al && php -m
-
-CMD curl -sS https://getcomposer.org/installer | php \
+CMD pwd \
+	&& ls -al \
+	&& php -m \
+	&& curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/local/bin/composer \
 	&& composer -v \
 	&& composer config -g repo.packagist composer https://packagist.phpcomposer.com
