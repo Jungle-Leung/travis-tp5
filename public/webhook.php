@@ -6,7 +6,7 @@ $secret = "123456";
 
 $logName = '../logs/gitHubAuto_hook.log';
 
-if(!is_file($logName)) @touch($logName);
+if(!file_exists($logName)) touch($logName);
 
 // 日志文件地址
 $fs = fopen($logName, 'a');
