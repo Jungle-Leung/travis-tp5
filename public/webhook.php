@@ -6,7 +6,7 @@ $secret = "123456";
 $wwwUser = 'www';
 $wwwGroup = 'www';
 
-$logName = './logs/gitHubAuto_hook.log';
+$logName = '../logs/gitHubAuto_hook.log';
 
 if(!is_file($logName)) @touch($logName);
 
@@ -39,12 +39,12 @@ if ($hash === $payloadHash) {
     $res_log .= '=======================================================================' . PHP_EOL;
     
     fwrite($fs, $res_log);
-    $fs and fclose($fs);
+    $fs && fclose($fs);
 } else {
     $res_log = 'Error:' . PHP_EOL;
     $res_log .= $content['head_commit']['author']['name'] . ' 在' . date('Y-m-d H:i:s') . '向' . $content['repository']['name'] . '项目的' . $content['ref'] . '分支push了' . count($content['commits']) . '>个commit：' . PHP_EOL;
     $res_log .= '密钥不正确不能pull' . PHP_EOL;
     $res_log .= '=======================================================================' . PHP_EOL;
     fwrite($fs, $res_log);
-    $fs and fclose($fs);
+    $fs && fclose($fs);
 }
