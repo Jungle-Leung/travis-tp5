@@ -1,4 +1,6 @@
 FROM php:7.0-fpm
+    
+WORKDIR /var/www/html
 
 COPY ./sources.list.stretch /etc/apt/sources.list
 
@@ -44,15 +46,10 @@ RUN mkdir -p /tmp/redis \
     && docker-php-ext-configure /tmp/redis --enable-redis \
     && docker-php-ext-install /tmp/redis \
     && rm -r /tmp/redis
-    
-WORKDIR /var/www/html
 
-CMD pwd \
-	&& ls -al \
-	&& php -m \
-	&& curl -sS https://getcomposer.org/installer | php \
+CMD curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/local/bin/composer \
 	&& composer -v \
-	&& composer config -g repo.packagist composer https://packagist.phpcomposer.com \
+	#&& composer config -g repo.packagist composer https://packagist.phpcomposer.com \
 	&& composer install
     
