@@ -47,7 +47,7 @@ RUN mkdir -p /tmp/redis \
     && docker-php-ext-install /tmp/redis \
     && rm -r /tmp/redis
 
-CMD curl -sS https://getcomposer.org/installer | php \
+ENTRYPOINT curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/local/bin/composer \
 	&& composer -v \
 	#&& composer config -g repo.packagist composer https://packagist.phpcomposer.com \
