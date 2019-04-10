@@ -6,8 +6,12 @@ $secret = "123456";
 $wwwUser = 'www';
 $wwwGroup = 'www';
 
+$logName = './logs/gitHubAuto_hook.log';
+
+if(!is_file($logName)) @touch($logName);
+
 // 日志文件地址
-$fs = fopen('./logs/gitHubAuto_hook.log', 'a');
+$fs = fopen($logName, 'a');
 
 // 获取GitHub发送的内容
 $json = file_get_contents('php://input');
