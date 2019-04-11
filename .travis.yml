@@ -24,13 +24,13 @@ install:
   - ls -al
 
 script:
-	- "./think unit"
+  - "./think unit"
 	
 after_success:
-  	- ssh -p 63275 root@travis-tp5-prod.web.freenat.club "cd /opt && ls -al && pwd"
+  - ssh -p 63275 root@travis-tp5-prod.web.freenat.club "cd /opt && ls -al && pwd"
 
 addons:
-  	ssh_known_hosts: travis-tp5-prod.web.freenat.club
+  ssh_known_hosts: travis-tp5-prod.web.freenat.club
 
 deploy:
   provider: releases
