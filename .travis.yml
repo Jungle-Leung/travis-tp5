@@ -9,6 +9,9 @@ branches:
 php: 
   - 7.0.2
 
+addons:
+  ssh_known_hosts: travis-tp5-prod.web.freenat.club
+
 cache:
   directories:
     - $HOME/.composer/cache
@@ -27,6 +30,9 @@ install:
 
 script:
   - ./think unit
+ 
+after_success:
+  - ssh -p 63275 root@travis-tp5-prod.web.freenat.club "cd /opt && ls -al && pwd"
 
 deploy:
   provider: releases
@@ -39,8 +45,3 @@ deploy:
   on:
     tags: true
     
-#after_success:
-#  - ssh -p 63275 root@travis-tp5-prod.web.freenat.club "cd /opt && ls -al && pwd"
-
-#addons:
-#  ssh_known_hosts: travis-tp5-prod.web.freenat.club
