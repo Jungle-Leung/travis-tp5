@@ -27,7 +27,7 @@ script:
 	- "./think unit"
 	
 after_success:
-  	- ssh -p 63275 root@travis-tp5-prod.web.freenat.club "cd /opt && ls -al && pwd"
+  	- ssh -p 63275 root@travis-tp5-prod.web.freenat.club "cd /opt && ls -al"
 
 addons:
   	ssh_known_hosts: travis-tp5-prod.web.freenat.club
