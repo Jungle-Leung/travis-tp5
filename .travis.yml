@@ -6,8 +6,8 @@ branches:
   only:
     - master
 
-php: 
-  - 7.0.2
+#php: 
+#  - 7.0.2
 
 addons:
   ssh_known_hosts: travis-tp5-prod.web.freenat.club
@@ -24,7 +24,7 @@ before_install:
 install:
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Core.zip .
   - composer install --no-dev --no-interaction --ignore-platform-reqs
-  - composer require --ignore-platform-reqs phan/phan
+  - composer require phan/phan
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Full.zip .
   - chmod -R 777 ./
   - ls -al
