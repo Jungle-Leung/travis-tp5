@@ -22,13 +22,14 @@ before_install:
 install:
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Core.zip .
   - composer install --no-dev --no-interaction --ignore-platform-reqs
+  - composer require --dev --ignore-platform-reqs -g "phan/phan:1.x"
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Full.zip .
   - chmod -R 777 ./
   - ls -al
 
 script:
-  - ./vendor/bin/phan --init --init-level=3
-  - ./vendor/bin/phan --progress-bar
+  - phan --init --init-level=3
+  - phan --progress-bar
   - ./think unit
  
 after_success:
