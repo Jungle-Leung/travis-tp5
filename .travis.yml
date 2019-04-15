@@ -22,9 +22,9 @@ before_install:
   - composer self-update
 
 install:
-  - composer require --dev "phan/phan:1.x"
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Core.zip .
   - composer install --no-dev --no-interaction --ignore-platform-reqs
+  - composer require --dev "phan/phan:1.x"
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Full.zip .
   - chmod -R 777 ./
   - ls -al
