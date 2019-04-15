@@ -28,10 +28,10 @@ install:
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Full.zip .
   - chmod -R 777 ./
   - ls -al
-
-script:
   - ./vendor/bin/phan --init --init-level=3
   - ./vendor/bin/phan --progress-bar
+
+script:
   - ./think unit
  
 after_success:
