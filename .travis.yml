@@ -6,8 +6,8 @@ branches:
   only:
     - master
 
-php: 
-  - 7.0.2
+#php: 
+#  - 7.0.2
 
 addons:
   ssh_known_hosts: travis-tp5-prod.web.freenat.club
