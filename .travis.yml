@@ -17,9 +17,11 @@ cache:
     - $HOME/.composer/cache
 
 before_install:
+  - php -m
   - composer self-update
 
 install:
+  - composer global require phan/phan
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Core.zip .
   - composer install --no-dev --no-interaction --ignore-platform-reqs
   - zip -r --exclude='*.git*' --exclude='*.zip' --exclude='*.travis.yml' ThinkPHP_Full.zip .
@@ -27,7 +29,6 @@ install:
   - ls -al
 
 script:
-  - composer global require phan/phan
   - phan --init --init-level=3
   - phan --progress-bar
   - ./think unit
