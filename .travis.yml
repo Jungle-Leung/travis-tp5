@@ -18,6 +18,7 @@ cache:
 
 before_install:
   - php -m
+  - pecl install ast-1.0.1
   - composer self-update
 
 install:
