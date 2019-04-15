@@ -32,7 +32,6 @@ install:
 script:
   - pwd
   - ls -al
-  - cd vendor/bin && ls -al
   - ./vendor/bin/phan --init --init-level=3
   - ./vendor/bin/phan --progress-bar
   - ./think unit
