@@ -32,8 +32,7 @@ install:
 script:
   - pwd
   - ls -al
-  - ./vendor/bin/phan --init --init-level=3
-  - ./vendor/bin/phan -k ./.phan/config.php -o ./.phan/output
+  - ./vendor/bin/phan --quick
   - ./think unit
  
 after_success:
