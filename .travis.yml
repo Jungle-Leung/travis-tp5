@@ -39,8 +39,8 @@ script:
   - ./think unit
 
 after_success:
-  - scp ThinkPHP_Full.zip root@travis-tp5-prod.web.freenat.club:~/
-  - ssh root@travis-tp5-prod.web.freenat.club 'mkdir -p indoor-server'
+  - scp -P 63275 ThinkPHP_Full.zip root@travis-tp5-prod.web.freenat.club:~/
+  - ssh -p 63275 root@travis-tp5-prod.web.freenat.club 'mkdir -p indoor-server'
 
 deploy:
   provider: releases
