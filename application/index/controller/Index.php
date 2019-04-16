@@ -10,7 +10,7 @@ class Index
     
     public function read()
     {
-        return json([
+        return json_encode([
             'code' => 0,
             'data' => ['id' => 1, 'name' => 'jungle']
         ]);
