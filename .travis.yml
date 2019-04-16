@@ -15,6 +15,7 @@ addons:
 cache:
   directories:
     - $HOME/.composer/cache
+    - $HOME/.cache/phan-ast/build
 
 before_install:
   - pecl install ast-1.0.1
@@ -30,11 +31,8 @@ install:
   - ls -al
 
 script:
-  - ./vendor/bin/phan --quick
+  - ./vendor/bin/phan
   - ./think unit
- 
-after_success:
-  - ssh -p 63275 root@travis-tp5-prod.web.freenat.club "cd /opt && ls -al && pwd"
 
 deploy:
   provider: releases
