@@ -10,12 +10,15 @@ class Index
     
     public function read()
     {
-        return 'read v1.0';
+        return json([
+            'code' => 0,
+            'data' => ['id' => 1, 'name' => 'jungle']
+        ]);
     }
     
     public function create()
     {
-        return 'create v1.0';
+        return 'create';
     }
     
     public function update()
