@@ -31,7 +31,6 @@ install:
   - ls -al
 
 script:
-  - ./vendor/bin/phan --init --init-level=1
   - ./vendor/bin/phan --progress-bar
   - ./think unit
 
