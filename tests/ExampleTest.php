@@ -1,29 +1,30 @@
 <?php
-// +----------------------------------------------------------------------
-// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2006-2015 http://thinkphp.cn All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
-// | Author: yunwuxin <448901948@qq.com>
-// +----------------------------------------------------------------------
 namespace tests;
 
 class ExampleTest extends TestCase
 {
     
-    public function testBasicExample()
+    public function testIndexExample()
     {
         $this->visit('/')->see('ThinkPHP');
     }
     
-    public function readTest()
+    /**
+     * 测试read请求是否获取正确数据
+     * @author Jungle 2019年4月16日 下午4:52:41
+     */
+    public function testReadExample()
     {
-        $this->visit('/index/index/read')->see('read');
+        $this->visit('/index/index/read')->seeStatusCode(200)->seeJson([
+            'code' => 0
+        ]);
     }
     
-    public function createTest()
+    /**
+     * 测试create请求是否获取正确数据
+     * @author Jungle 2019年4月16日 下午4:52:41
+     */
+    public function testCreateExample()
     {
         $this->visit('/index/index/create')->see('create');
     }
