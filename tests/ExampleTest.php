@@ -4,6 +4,10 @@ namespace tests;
 class ExampleTest extends TestCase
 {
     
+    /**
+     * 测试index请求是否获取正确数据
+     * @author Jungle 2019年4月16日 下午4:52:41
+     */
     public function testIndexExample()
     {
         $this->visit('/')->see('ThinkPHP');
