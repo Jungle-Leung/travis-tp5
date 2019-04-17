@@ -18,8 +18,7 @@ cache:
     - "$HOME/.cache/phan-ast/build"
   
 before_install:
-  #- openssl aes-256-cbc -K $encrypted_ca2765ebb306_key -iv $encrypted_ca2765ebb306_iv
-    -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  #- openssl aes-256-cbc -K $encrypted_ca2765ebb306_key -iv $encrypted_ca2765ebb306_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
   #- chmod 600 ~/.ssh/id_rsa
   #- echo -e "Host travis-tp5-prod.web.freenat.club\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - pecl install ast-1.0.1
