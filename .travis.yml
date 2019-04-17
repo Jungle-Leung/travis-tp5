@@ -18,10 +18,10 @@ cache:
     - "$HOME/.cache/phan-ast/build"
   
 before_install:
-  - openssl aes-256-cbc -K $encrypted_ca2765ebb306_key -iv $encrypted_ca2765ebb306_iv
+  #- openssl aes-256-cbc -K $encrypted_ca2765ebb306_key -iv $encrypted_ca2765ebb306_iv
     -in id_rsa.enc -out ~/.ssh/id_rsa -d
-  - chmod 600 ~/.ssh/id_rsa
-  - echo -e "Host travis-tp5-prod.web.freenat.club\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  #- chmod 600 ~/.ssh/id_rsa
+  #- echo -e "Host travis-tp5-prod.web.freenat.club\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - pecl install ast-1.0.1
   - php -m
   - composer self-update
@@ -38,10 +38,10 @@ script:
   - ./vendor/bin/phan --progress-bar
   - ./think unit
 
-after_success:
-  - ssh -p 63275 root@travis-tp5-prod.web.freenat.club 'mkdir -p /opt/www/travis-tp5'
-  - scp -P 63275 ThinkPHP_Full.zip root@travis-tp5-prod.web.freenat.club:/opt/www/travis-tp5
-  - ssh -p 63275 root@travis-tp5-prod.web.freenat.club 'cd /opt/www/travis-tp5 && unzip ThinkPHP_Full.zip && rm -rf ThinkPHP_Full.zip'
+#after_success:
+#  - ssh -p 63275 root@travis-tp5-prod.web.freenat.club 'mkdir -p /opt/www/travis-tp5'
+#  - scp -P 63275 ThinkPHP_Full.zip root@travis-tp5-prod.web.freenat.club:/opt/www/travis-tp5
+#  - ssh -p 63275 root@travis-tp5-prod.web.freenat.club 'cd /opt/www/travis-tp5 && unzip ThinkPHP_Full.zip && rm -rf ThinkPHP_Full.zip'
 
 deploy:
   provider: releases
